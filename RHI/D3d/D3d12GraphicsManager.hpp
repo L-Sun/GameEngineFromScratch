@@ -59,6 +59,7 @@ namespace My {
         static const uint32_t           m_kFrameCount  = 2;
         static const uint32_t           m_kMaxTextureCount  = 2048;
         static const uint32_t           m_kMaxLightCount = 100;
+        static const uint32_t           m_kTextureDescOffset = 2 * m_kFrameCount;
 
         ID3D12Device*                   m_pDev       = nullptr;             // the pointer to our Direct3D device interface
         D3D12_VIEWPORT                  m_ViewPort;                         // viewport structure
@@ -73,8 +74,7 @@ namespace My {
         ID3D12RootSignature*            m_pRootSignatureResolve = nullptr;  // a graphics root signature defines what resources are bound to the pipeline
         ID3D12DescriptorHeap*           m_pRtvHeap = nullptr;               // an array of descriptors of GPU objects
         ID3D12DescriptorHeap*           m_pDsvHeap = nullptr;               // an array of descriptors of GPU objects
-		ID3D12DescriptorHeap*           m_pCbvHeap = nullptr;               // an array of descriptors of GPU objects
-		ID3D12DescriptorHeap*           m_pSrvHeap = nullptr;               // an array of descriptors of GPU objects
+		ID3D12DescriptorHeap*           m_pCbvSrvUavHeap = nullptr;               // an array of descriptors of GPU objects
         ID3D12DescriptorHeap*           m_pSamplerHeap = nullptr;           // an array of descriptors of GPU objects
         ID3D12PipelineState*            m_pPipelineState = nullptr;         // an object maintains the state of all currently set shaders
                                                                             // and certain fixed function state objects
